@@ -93,4 +93,5 @@ public class Move {
 	public int getAdvHit () {
 		return move_adv_hit;
 	}
+	
 }
