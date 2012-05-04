@@ -7,7 +7,7 @@ public class blabla {
 	}
 	
 	static void main (String[] args) {
-		System.out.println("Dracula n'est qu'un gros PD");
+		System.out.println("Jacky  n'est qu'un gros PD");
 	}
 	
 	private char lol() {
