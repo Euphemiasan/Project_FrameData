@@ -6,9 +6,8 @@ package core;
  * @author Joseph Nguyen
  * @param fighter_id / Id du combattant
  * @param fighter_name / Nom du combattant
- * 
- * 
  */
+
 public class Fighter {
 	private int fighter_id;
 	private String fighter_name;
