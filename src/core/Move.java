@@ -33,14 +33,13 @@ public class Move {
 		move_id = id;
 	}
 	
-	public int getId () {
-		return move_id;
-	}
-	
-	
 	////////////////////////
 	////	Getters		////
 	////////////////////////
+	
+	public int getId () {
+		return move_id;
+	}
 	
 	public String getName () {
 		return move_name;
