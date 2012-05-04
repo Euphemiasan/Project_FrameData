@@ -3,7 +3,7 @@ package core;
 /**
  * Représente un Coup
  * 
- * @author Joseph Nguyen
+ * @author Joseph Nguyen & Alexandre Leblond
  * 
  */
 public class Move {
@@ -11,7 +11,7 @@ public class Move {
 	
 	private String move_name;
 	private char move_type;
-	private String move_input;
+	//private String move_input; devient cle de fighter_moves<str,move> AL 4/5/12
 	
 	private int move_damage;
 	private char move_block;
@@ -26,7 +26,7 @@ public class Move {
 	private int move_adv_hit;
 	
 	/*
-	 * Manque : move_note;
+	 * Manque : move_note; //Et id_fighter ? C'est peut etre une connerie
 	 */
 	
 	public Move (int id) {
@@ -50,9 +50,11 @@ public class Move {
 		return move_type;
 	}
 	
+	/*
 	public String getInput () {
 		return move_input;
 	}
+	*/
 	
 	public int getDamage () {
 		return move_damage;
