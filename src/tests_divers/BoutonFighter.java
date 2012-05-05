@@ -18,29 +18,30 @@ public class BoutonFighter extends JButton {
 	 */
 	public BoutonFighter (int id) {
 		id_fighter = id;
-		
-	}
-		
-	/*
-	 * Redifinition de paintComponent pour enlever les bordures
-	 * et affecter l'image du fighter
-	 */
-	protected void paintComponent (Graphics g) {
-		super.paintComponent(g);
-		setSize(77, 77);
+
 		try {
-			String id = String.valueOf(id_fighter);
+			String ids = String.valueOf(id_fighter);
 			if (id_fighter < 10) 
-				id = "0"+String.valueOf(id_fighter);
+				ids = "0"+String.valueOf(id_fighter);
 			
-			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+id+".png"));
+			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+ids+".png"));
+			
 			setIcon(new ImageIcon(icon));
 			setRolloverIcon(new ImageIcon(createRolloverIcon(icon)));
 			setPressedIcon(new ImageIcon(createRolloverIcon(icon)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+	}
 		
+	/*
+	 * Redifinition de paintComponent pour enlever les propriétés basiques du JButton
+	 */
+	protected void paintComponent (Graphics g) {
+		super.paintComponent(g);
+		
+		setSize(75, 75);		
 		setContentAreaFilled(false); // Enlève le fond par défaut des JButton
 		setFocusPainted(false);
 		setBorder(null);
