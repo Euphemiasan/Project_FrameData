@@ -1,5 +1,6 @@
 package tests_divers;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 
@@ -10,21 +11,22 @@ public class InterfaceGraphique {
 	public static void main (String[] args) {
 		JFrame fenetre = new JFrame();
 		fenetre.setTitle("Test boutons fighter");
-		fenetre.setSize(900, 450);
+		fenetre.setSize(1100, 450);
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container contenu = fenetre.getContentPane();
+		contenu.setBackground(new Color(156, 47, 47));
 		contenu.setLayout(new FlowLayout());
-
+		
+		BoutonsListerner bouton_listener = new BoutonsListerner();
+		
 		for (int i=1; i<=39; i++) {
 			BoutonFighter bouton_fighter = new BoutonFighter(i);
+			bouton_fighter.addActionListener(bouton_listener);
 			contenu.add(bouton_fighter);
 		}
 		
 		fenetre.setVisible(true);
 		
-		
-		
-
 	}
 }

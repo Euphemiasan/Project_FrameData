@@ -12,62 +12,53 @@ import javax.swing.JButton;
 public class BoutonFighter extends JButton {
 	private int id_fighter;
 	
-	/*
-	 * Pour le moment id_fighter ne sert a rien, mais il permettra
-	 * ensuite d'aller chercher l'icone correspondante
-	 */
 	public BoutonFighter (int id) {
 		id_fighter = id;
-
+		setActionCommand(String.valueOf(id_fighter));
+		
 		try {
-			String ids = String.valueOf(id_fighter);
-			if (id_fighter < 10) 
-				ids = "0"+String.valueOf(id_fighter);
-			
-			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+ids+".png"));
+			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+id+".png"));
+			BufferedImage icon_rollover = createRolloverIcon(icon);
 			
 			setIcon(new ImageIcon(icon));
-			setRolloverIcon(new ImageIcon(createRolloverIcon(icon)));
-			setPressedIcon(new ImageIcon(createRolloverIcon(icon)));
-		} catch (IOException e) {
-			e.printStackTrace();
+			setRolloverIcon(new ImageIcon(icon_rollover));
+			setPressedIcon(new ImageIcon(icon_rollover));
+		} catch (IOException ioe) {
+			System.out.println("Display Icon Problem");
+			ioe.printStackTrace();
 		}
-
 	}
 		
-	/*
-	 * Redifinition de paintComponent pour enlever les propriétés basiques du JButton
-	 */
+	// Redifinition de paintComponent pour enlever les propriétés basiques du JButton
 	protected void paintComponent (Graphics g) {
 		super.paintComponent(g);
 		
-		setSize(75, 75);		
+		setSize(75, 75);
 		setContentAreaFilled(false); // Enlève le fond par défaut des JButton
-		setFocusPainted(false);
-		setBorder(null);
+		setFocusPainted(false); // Enlève le cadre qui s'affiche une fois qu'on clique dessus
+		setBorder(null); // Enlève les bordures du bouton et l'effet du survol
 	}
 	
-	/*
-	 * Méthode qui fusionne 2 images en une nouvelle
-	 */
-	public static BufferedImage createRolloverIcon(BufferedImage image) {
-		BufferedImage rolloverIcon = null;
+	// Méthode qui fusionne 2 images en une nouvelle
+	public static BufferedImage createRolloverIcon(BufferedImage icon) {
+		BufferedImage icon_rollover = null;
 		
 		try {
 			BufferedImage selection = ImageIO.read(new File("images/selection_screen/character_selection.png"));
 			
-			int w = Math.max(image.getWidth(), selection.getWidth());
-			int h = Math.max(image.getHeight(), selection.getHeight());
-			rolloverIcon = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+			int w = Math.max(icon.getWidth(), selection.getWidth());
+			int h = Math.max(icon.getHeight(), selection.getHeight());
+			icon_rollover = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 			
-			Graphics g = rolloverIcon.getGraphics();
-			g.drawImage(image, 0, 0, null);
+			Graphics g = icon_rollover.getGraphics();
+			g.drawImage(icon, 0, 0, null);
 			g.drawImage(selection, 0, 0, null);
 			
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ioe) {
+			System.out.println("Display Icon Problem");
+			ioe.printStackTrace();
 		}
 		
-		return rolloverIcon;
+		return icon_rollover;
 	}
 }
