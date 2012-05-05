@@ -1,5 +1,14 @@
 Récapitulatif + Constantes :
 
+Project FrameData est un projet en JAVA réalisé par Alexandre Leblond et Joseph Nguyen. Il s'agit d'afficher les moves spécifiques détaillés à chaque personnage 
+du jeu vidéo Super Street Fighter IV : Arcade Edition. 
+
+Etapes : 
+[01] Être capable d'afficher les mouvements uniques de chaque combattant ainsi que de sa frame list [EN COURS]
+[02] En fonction d'un coup sélectionné, afficher tous les coup "link-able" ou "cancellable" afin de créer des combo maison
+[03] Implémenter le programme IG (une fenetre en premier plan en mode Borderless au moins), qui réagit en fonction des inputs du joueur via son
+contrôleur (manette, stick arcade, fightpad).
+
 Id des personnages : (reprise de l'ordre de l'écran de sélection, un saut de ligne correpond a un retour à la ligne dans l'écran de sélection)
 01 - Ryu
 02 - Ken
