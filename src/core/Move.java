@@ -1,9 +1,9 @@
 package core;
 
 /**
- * Représente un Coup
+ * Reprï¿½sente un Coup
  * 
- * @author Joseph Nguyen & Alexandre Leblond
+ * @author Joseph Nguyen & Alexandre Leblond & Aurelien Michalinko
  * 
  */
 public class Move {
