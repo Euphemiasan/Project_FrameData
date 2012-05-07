@@ -10,6 +10,10 @@ public class CreateBase
 	private Connection local;
 	private Statement localStat;
 
+	/*
+	 * Table 
+	 */
+	
 	public CreateBase() 
 	{
 		try 
@@ -27,7 +31,13 @@ public class CreateBase
 	{
 		try 
 		{
-			localStat.executeUpdate("CREATE TABLE Characters (Id_characters char(5) NOT NULL, Nom_fighter varchar(20) NOT NULL, PRIMARY KEY (Id_characters))");
+			String requete = "CREATE TABLE Fighters " +
+								"(" +
+								"fighter_id num(2) NOT NULL, " +
+								"fighter_name varchar(20) NOT NULL," +
+								"PRIMARY KEY (fighter_id)" +
+								")";
+			localStat.executeUpdate(requete);
 			localStat.executeUpdate("CREATE TABLE Move (Id_move char(5) NOT NULL, Nom_move varchar(20) NOT NULL, Input_move varchar(20), Id_characters char(5), PRIMARY KEY (Id_move), FOREIGN KEY(Id_characters) REFERENCES Characters(Id_characters))");
 		} 
 		catch(Exception e) 
