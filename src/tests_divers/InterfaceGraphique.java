@@ -6,9 +6,9 @@ import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 
-public class InterfaceGraphique {
+public class InterfaceGraphique  {
 
-	public static void main (String[] args) {
+	public static void main (String[] args) throws Exception {
 		JFrame fenetre = new JFrame();
 		fenetre.setTitle("Test boutons fighter");
 		fenetre.setSize(1100, 450);
@@ -25,6 +25,11 @@ public class InterfaceGraphique {
 			bouton_fighter.addActionListener(bouton_listener);
 			contenu.add(bouton_fighter);
 		}
+		
+		CreateBase cb = new CreateBase();
+		cb.create();
+		cb.insert();
+//		cb.close();
 		
 		fenetre.setVisible(true);
 		
