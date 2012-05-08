@@ -1,2 +1,3 @@
 Fighters
 INSERT INTO Fighters values('15','Juri')
+INSERT INTO Fighters values('4','Ibuki')
