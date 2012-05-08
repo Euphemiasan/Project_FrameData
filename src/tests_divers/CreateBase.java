@@ -31,14 +31,55 @@ public class CreateBase
 	{
 		try 
 		{
-			String requete = "CREATE TABLE Fighters " +
-								"(" +
-								"fighter_id num(2) NOT NULL, " +
-								"fighter_name varchar(20) NOT NULL," +
-								"PRIMARY KEY (fighter_id)" +
-								")";
+			String requete;
+			
+			requete = "CREATE TABLE Fighters " +
+						"(" +
+						"fighter_id numeric(2) NOT NULL, " +
+						"fighter_name varchar(20), " +
+						"PRIMARY KEY (fighter_id)" +
+						")";
 			localStat.executeUpdate(requete);
-			localStat.executeUpdate("CREATE TABLE Move (Id_move char(5) NOT NULL, Nom_move varchar(20) NOT NULL, Input_move varchar(20), Id_characters char(5), PRIMARY KEY (Id_move), FOREIGN KEY(Id_characters) REFERENCES Characters(Id_characters))");
+			
+			requete = "CREATE TABLE SpecialMoves " +
+						"(" +
+						"move_id numeric(5) NOT NULL, " +
+						"fighter_id numeric(2) NOT NULL, " +
+						"move_name varchar(25), " +
+						"move_input varchar(25), " +
+						"move_type char(1), " +
+						"move_armor_break boolean, " +
+						"move_ex_possible boolean, " +
+						"PRIMARY KEY (move_id), " +
+						"FOREIGN KEY (fighter_id) REFERENCES Fighters(fighter_id)" +
+						")";
+			localStat.executeUpdate(requete);
+			
+			requete = "CREATE TABLE FrameData " +
+						"(" +
+						"move_id numeric(5) NOT NULL, " +
+						"fighter_id numeric(2) NOT NULL, " +
+						"move_name varchar(25), " +
+						"move_input varchar(25), " +
+						"move_type char(1), " +
+						"move_damage varchar(25), " +
+						"move_block varchar(2), " +
+						"move_stun varchar(25), " +
+						"move_meter varchar(25), " +
+						"move_startup varchar(25), " +
+						"move_active varchar(25), " +
+						"move_recovery varchar(25), " +
+						"move_hit_adv varchar(25), " +
+						"move_block_adv varchar(25), " +
+						"move_iframes varchar(25), " +
+						"move_chain boolean, " +
+						"move_special boolean, " +
+						"move_super boolean, " +
+						"move_note varchar(100), " +
+						"PRIMARY KEY (move_id), " +
+						"FOREIGN KEY(fighter_id) REFERENCES Fighters(fighter_id)" +
+						")";
+			localStat.executeUpdate(requete);
 		} 
 		catch(Exception e) 
 		{

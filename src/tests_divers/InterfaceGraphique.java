@@ -6,9 +6,11 @@ import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 
-public class InterfaceGraphique  {
+public class InterfaceGraphique
+{
 
-	public static void main (String[] args) throws Exception {
+	public static void main (String[] args) throws Exception
+	{
 		JFrame fenetre = new JFrame();
 		fenetre.setTitle("Test boutons fighter");
 		fenetre.setSize(1100, 450);
@@ -20,7 +22,8 @@ public class InterfaceGraphique  {
 		
 		BoutonsListerner bouton_listener = new BoutonsListerner();
 		
-		for (int i=1; i<=39; i++) {
+		for (int i=1; i<=39; i++)
+		{
 			BoutonFighter bouton_fighter = new BoutonFighter(i);
 			bouton_fighter.addActionListener(bouton_listener);
 			contenu.add(bouton_fighter);
@@ -28,7 +31,7 @@ public class InterfaceGraphique  {
 		
 		CreateBase cb = new CreateBase();
 		cb.create();
-		cb.insert();
+//		cb.insert();
 //		cb.close();
 		
 		fenetre.setVisible(true);
