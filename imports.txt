@@ -1,3 +1,4 @@
 INSERT INTO Fighters values('15','Juri')
 Aurel pro
 Jacky Pro olol
+
