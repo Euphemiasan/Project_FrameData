@@ -159,7 +159,7 @@ INSERT INTO SpecialMoves values('','6','Rocket Upper','236236P','S','false','fal
 INSERT INTO SpecialMoves values('','6','Rolling Thunder','236236KKK','U','false','false','')
 INSERT INTO SpecialMoves values('','6','Corkscrew Cross','236236PPP','U','true','false','')
 
-//Seth PAS OK
+//Seth
 INSERT INTO SpecialMoves values('','7','Genocide Shot','6|NLPK','t','false','false','PR près adversaire')
 INSERT INTO SpecialMoves values('','7','Death Throw','4LPK','t','false','false','PR près adversaire')
 INSERT INTO SpecialMoves values('','7','Yosokyaku','2MK','u','false','false','PR en sautant, peut être effectué trois fois d'affilée')
@@ -168,8 +168,8 @@ INSERT INTO SpecialMoves values('','7','Wall Jump','9','u','false','false','PR e
 INSERT INTO SpecialMoves values('','7','Sonic Boom','236P','s','false','true','')
 INSERT INTO SpecialMoves values('','7','Shoryuken','623P','s','false','true','peut être effectué trois fois d'affilée')
 INSERT INTO SpecialMoves values('','7','Hyakuretsukyaku','214K','s','true','true','')
-INSERT INTO SpecialMoves values('','7','Tanden Engine','214P','s','false','true','EX*2') // PEUT ETRE A REVOIR
-INSERT INTO SpecialMoves values('','7','Spinning Piledriver','63214789P','s','false','true','') // PEUT ETRE A REVOIR
+INSERT INTO SpecialMoves values('','7','Tanden Engine','214P','s','false','true','AR during EX Tanden Engine, Consumes 1/2 S.C Gauge') 
+INSERT INTO SpecialMoves values('','7','Spinning Piledriver','63214789P','s','false','true','')
 INSERT INTO SpecialMoves values('','7','Yoga Teleport','623|421PPP|KKK','s','false','false','')
 INSERT INTO SpecialMoves values('','7','Tanden Storm','236236P','S','false','false','')
 INSERT INTO SpecialMoves values('','7','Tanden Stream','236236PPP','U','true','false','')
