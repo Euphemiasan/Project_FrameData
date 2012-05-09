@@ -1,4 +1,4 @@
-package core;
+package model;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
