@@ -1,7 +1,151 @@
-INSERT INTO Fighters values('15','Juri')
-Aurel noob
-Jacky Pro
+INSERT INTO Fighters values ('1','Ryu')
+INSERT INTO Fighters values ('2','Ken')
+INSERT INTO Fighters values ('3','Honda')
+INSERT INTO Fighters values ('4','Ibuki')
+INSERT INTO Fighters values ('5','Makoto')
+INSERT INTO Fighters values ('6','Dudley')
+INSERT INTO Fighters values ('7','Seth')
+INSERT INTO Fighters values ('8','Gouken')
+INSERT INTO Fighters values ('9','Akuma')
+INSERT INTO Fighters values ('10','Gen')
+INSERT INTO Fighters values ('11','Dan')
+INSERT INTO Fighters values ('12','Sakura')
+INSERT INTO Fighters values ('13','Oni')
+INSERT INTO Fighters values ('14','Yun')
+INSERT INTO Fighters values ('15','Juri')
+INSERT INTO Fighters values ('16','Chun-Li')
+INSERT INTO Fighters values ('17','Dhalsim')
+INSERT INTO Fighters values ('18','Abel')
+INSERT INTO Fighters values ('19','C.Viper')
+INSERT INTO Fighters values ('20','Bison')
+INSERT INTO Fighters values ('21','Sagat')
+INSERT INTO Fighters values ('22','Cammy')
+INSERT INTO Fighters values ('23','Dee-Jay')
+INSERT INTO Fighters values ('24','Cody')
+INSERT INTO Fighters values ('25','Guy')
+INSERT INTO Fighters values ('26','Hakan')
+INSERT INTO Fighters values ('27','Yang')
+INSERT INTO Fighters values ('28','Evil Ryu')
+INSERT INTO Fighters values ('29','Guile')
+INSERT INTO Fighters values ('30','Blanka')
+INSERT INTO Fighters values ('31','Zangief')
+INSERT INTO Fighters values ('32','Rufus')
+INSERT INTO Fighters values ('33','El Fuerte')
+INSERT INTO Fighters values ('34','Vega')
+INSERT INTO Fighters values ('35','Balrog')
+INSERT INTO Fighters values ('36','Fei Long')
+INSERT INTO Fighters values ('37','T-Hawk')
+INSERT INTO Fighters values ('38','Adon')
+INSERT INTO Fighters values ('39','Rose')
 
-Ajout Test
 
-Ajout Test2
+move_id numeric(5), fighter_id numeric(2), move_name varchar(25), move_input varchar(25)
+move_type char(1), move_armor_break boolean, move_ex_possible boolean, move_not varchar(100)
+
+//SAGAT OK
+INSERT INTO SpecialMoves values ('', '21', 'Heavy Tiger Elbow', '6HP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '21', 'Low Step Kick', '6LK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '21', 'High Step Kick', '6HK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '21', 'Fake Kick', 'HK~HK', 'u', 'false', 'false', 'Cancel HK by pressing HK very fast')
+INSERT INTO SpecialMoves values ('', '21', 'High Tiger Shot', '236P', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '21', 'Low Tiger Shot', '236K', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '21', 'Tiger Uppercut', '623P', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '21', 'Tiger Knee Crush', '623K', 's', 'true', 'true', '')
+INSERT INTO SpecialMoves values ('', '21', 'Angry Charge', '214214K', 's', 'false', 'false', 'Consumes 1/4 S.C. Gauge;First Tiger Uppercut's properties will change')
+INSERT INTO SpecialMoves values ('', '21', 'Tiger Genocide', '236236K', 'S', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '21', 'Tiger Destruction', '236236KKK', 'U', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '21', 'Tiger Cannon', '236236PPP', 'U', 'false', 'false', '')
+
+//CAMMY OK
+INSERT INTO SpecialMoves values ('', '22', 'Cannon Spike', '623K', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '22', 'Spiral Arrow', '236K', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '22', 'Quick Spin Knuckle', '63214P', 's', 'true', 'true', '')
+INSERT INTO SpecialMoves values ('', '22', 'Hooligan Combination', '12369P', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '22', 'Hooligan Combination>Razor\'s Edge Slicer', '12369P>NO', 's', 'false', 'false', 'No input')
+INSERT INTO SpecialMoves values ('', '22', 'Hooligan Combination>Fatal Leg Twister', '12369P>LPLK', 's', 'false', 'false', 'Near opponent')
+INSERT INTO SpecialMoves values ('', '22', 'Hooligan Combination>Crossed Scissors', '12369P>LPLK', 's', 'false', 'false', 'Near opponent in air')
+INSERT INTO SpecialMoves values ('', '22', 'Cannon Strike', 'A214K', 's', 'false', 'true', 'Normal version during forward jump;EX version while any jump')
+INSERT INTO SpecialMoves values ('', '22', 'Spin Drive Smasher', '236236K', 'S', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '22', 'Gyro Drive Smasher', '236236KKK', 'U', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '22', 'CQC (Cammy Quick Combination)', '214214PPP', 'U', 'false', 'false', 'Only against certain attacks')
+
+//DEE-JAY 1 SOUCI
+INSERT INTO SpecialMoves values ('', '23', 'Knee Shot', '2LK', 'u', 'false', 'false', 'During angled jump') // Saut en diagonal
+INSERT INTO SpecialMoves values ('', '23', 'Air Slasher', 'CH46P', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '23', 'Double Rolling Sobat', 'CH46K', 's', 'true', 'true', '')
+INSERT INTO SpecialMoves values ('', '23', 'Jackknife Maximum', 'CH28K', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '23', 'Machinegun Upper', 'CH28SP', 's', 'true', 'true', '')
+INSERT INTO SpecialMoves values ('', '23', 'Sobat Carnival', 'CH4646K', 'S', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '23', 'Sobat Festival', 'CD4646KKK', 'U', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '23', 'Climax Beat', 'CH1319PPP', 'U', 'true', 'false', '')
+
+//CODY OK
+INSERT INTO SpecialMoves values ('', '24', 'Fake Bad Stone', '2HPHK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Pick up Knife', '2PPP', 'u', 'false', 'false', 'Only when standing over knife')
+INSERT INTO SpecialMoves values ('', '24', 'Knife Throw', '236P', 'u', 'false', 'false', 'While holding knife')
+INSERT INTO SpecialMoves values ('', '24', 'Knife Attack', 'P', 'u', 'false', 'false', 'While holding knife')
+INSERT INTO SpecialMoves values ('', '24', 'Bad Spray', '8P', 'u', 'false', 'false', 'During knockdown recovery')
+INSERT INTO SpecialMoves values ('', '24', 'Stomach Blow', '6MP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Crack Kick', '6HK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Jaw Crusher', '4MP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Hammer Hook', '6HP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Bad Stone', '236P', 's', 'false', 'true', 'Not possible when holding knife;Hold P for increased power')
+INSERT INTO SpecialMoves values ('', '24', 'Criminal Upper', '214P', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '24', 'Ruffian Kick', '236K', 's', 'true', 'true', '')
+INSERT INTO SpecialMoves values ('', '24', 'Zonk Knuckle', 'P', 's', 'true', 'true', 'Charge and Release')
+INSERT INTO SpecialMoves values ('', '24', 'Dead End Irony', '236236K', 'S', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Final Destruction', '236236PPP', 'U', 'true', 'false', '')
+INSERT INTO SpecialMoves values ('', '24', 'Last Dread Dust', '214214PPP', 'U', 'false', 'false', '')
+
+//Guy 2 SOUCIS
+INSERT INTO SpecialMoves values ('', '25', 'Elbow Drop', '2MP', 'u', 'false', 'false', '') // Saut
+INSERT INTO SpecialMoves values ('', '25', 'Ninja Sickle', '3HK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Neck Breaker', '6MP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Bushin Gokusaken', 'LP>MP>HP>HK', 'u', 'false', 'false', 'Switch HK to 2HK for throw')
+INSERT INTO SpecialMoves values ('', '25', 'Wall Jump', '9', 'u', 'false', 'false', 'Mid-jump near wall')
+INSERT INTO SpecialMoves values ('', '25', 'Target Combo', 'MP>HP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Hozanto', '214P', 's', 'true', 'true', '')
+INSERT INTO SpecialMoves values ('', '25', 'Bushin Senpukyaku', '214K', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '25', 'Bushin Izuna Otoshi', '236P>P', 's', 'false', 'true', 'When opponent is far, Bushin Izuna Otoshi replaced with Elbow Drop')
+INSERT INTO SpecialMoves values ('', '25', 'Run', '236K', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '25', 'Run>Sudden Stop', '236K>LK', 's', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Run>Shadow Kick', '236K>MK', 's', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Run>Neck Flip', '236K>HK', 's', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Kaiten Izuna Otoshi', '236P', 's', 'false', 'true', 'In Air') // In Air
+INSERT INTO SpecialMoves values ('', '25', 'Bushin Hasoken', '236236P', 'S', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Bushin Goraisenpujin', '236236KKK', 'U', 'true', 'false', '')
+INSERT INTO SpecialMoves values ('', '25', 'Bushin Muso Renge', '6321463214PPP', 'U', 'false', 'false', '')
+
+//HAKAN OK
+INSERT INTO SpecialMoves values ('', '26', 'Guard Position', '2PPP', 'u', 'false', 'false', 'Continuously perform directional input')
+INSERT INTO SpecialMoves values ('', '26', 'Hakan Smash', '6LP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Hakan Tackle', '6MP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Hakan Spear', '6HP', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Step Low', '6LK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Front Kick', '6MK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Step Knee', '6HK', 'u', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Shower', '623K', 's', 'false', 'true', 'Certain move properties will change; Defense will be increased')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Slide', '236P', 's', 'true', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Slide>Body Press', '236P>P', 's', 'false', 'false', 'Just before hit')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Slide>Oil Shower', '236P>K', 's', 'false', 'false', 'Just before hit')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Rocket', '63214789P', 's', 'false', 'true', '')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Dive', '63214789K', 's', 'false', 'true', 'Hold to charge')
+INSERT INTO SpecialMoves values ('', '26', 'Flying Oil Spin', '236236K', 'S', 'false', 'false', 'Hold to charge')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Coaster', '6321478963214789PPP', 'U', 'false', 'false', '')
+INSERT INTO SpecialMoves values ('', '26', 'Oil Combination Hold', '222KKK', 'U', 'false', 'false', '')
+
+//YANG
+
+
+//EVIL RYU
+//GUILE
+//BLANKA
+//ZANGIEF
+//RUFUS
+//EL FUERTE
+//VEGA
+//BALROG
+//FEI LONG
+//T-HAWK
+//ADON
+//ROSE

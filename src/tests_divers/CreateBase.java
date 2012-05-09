@@ -50,6 +50,7 @@ public class CreateBase
 						"move_type char(1), " +
 						"move_armor_break boolean, " +
 						"move_ex_possible boolean, " +
+						"move_note varchar(100), " +
 						"PRIMARY KEY (move_id), " +
 						"FOREIGN KEY (fighter_id) REFERENCES Fighters(fighter_id)" +
 						")";
