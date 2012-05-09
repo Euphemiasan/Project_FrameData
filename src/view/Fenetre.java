@@ -1,4 +1,4 @@
-package interface_graphique;
+package view;
 
 public class Fenetre {
 

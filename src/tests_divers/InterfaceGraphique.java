@@ -29,10 +29,12 @@ public class InterfaceGraphique
 			contenu.add(bouton_fighter);
 		}
 		
+		//*
 		CreateBase cb = new CreateBase();
 
 		cb.create();
 		cb.insert();
+		//*/
 //		cb.close();
 		
 		fenetre.setVisible(true);
