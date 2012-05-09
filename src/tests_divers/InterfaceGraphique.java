@@ -31,7 +31,7 @@ public class InterfaceGraphique
 		
 		CreateBase cb = new CreateBase();
 		cb.create();
-//		cb.insert();
+		cb.insert();
 //		cb.close();
 		
 		fenetre.setVisible(true);
