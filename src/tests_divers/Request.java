@@ -30,7 +30,7 @@ public class Request
 		StringBuilder s = new StringBuilder();
 		StringBuilder resultat = new StringBuilder();
 		try {
-			s.append("Select Nom_fighter from Characters where Id_characters = '").append(n).append("'");
+			s.append("Select fighter_name from Fighters where fighter_id = '").append(n).append("'");
 			ResultSet res = localStat.executeQuery(s.toString());
 			ResultSetMetaData m = res.getMetaData();
 			while(res.next())
@@ -54,7 +54,8 @@ public class Request
 		StringBuilder s = new StringBuilder();
 		StringBuilder resultat = new StringBuilder();
 		try {
-			s.append("Select Nom_move, Input_move from Move where Id_characters = '").append(n).append("'");
+			s.append("Select move_name, move_input from SpecialMoves where fighter_id = '").append(n).append("'");
+			System.out.println(s.toString());
 			ResultSet res = localStat.executeQuery(s.toString());
 			ResultSetMetaData m = res.getMetaData();
 			while(res.next())
