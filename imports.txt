@@ -1,4 +1,70 @@
-INSERT INTO Fighters values('15','Juri')
-Aurel pro
-Jacky Pro olol
+// Ryu
 
+INSERT INTO SpecialMoves values('','1','Hadoken','236P','s','false','true')
+INSERT INTO SpecialMoves values('','1','Shoryuken','623P','s','false','true')
+INSERT INTO SpecialMoves values('','1','Tatsumaki Senpukyaky','214K','s','true','true')
+INSERT INTO SpecialMoves values('','1','Airborne Tatsumaki Senpukyaku','J214K','s','false','true') //en l'air
+INSERT INTO SpecialMoves values('','1','Shinku Hadoken','236236P','S','false','false')
+INSERT INTO SpecialMoves values('','1','Metsu Hadoken','236236PPP','U','false','false')
+INSERT INTO SpecialMoves values('','1','Metsu Shoryuken','236236KKK','U','true','false')
+INSERT INTO SpecialMoves values('','1','Collarbone Breaker','','u','false','false')
+INSERT INTO SpecialMoves values('','1','Solar Plexus Strike','','u','false','false')
+
+// Ken
+
+INSERT INTO SpecialMoves values('','2','Hadoken','236P','s','false','true')
+INSERT INTO SpecialMoves values('','2','Shoryuken','623P','s','false','true')
+INSERT INTO SpecialMoves values('','2','Tatsumaki Senpukyaky','214K','s','true','true')
+INSERT INTO SpecialMoves values('','2','Airborne Tatsumaki Senpukyaku','J214K','s','false','true') //en l'air
+INSERT INTO SpecialMoves values('','2','Shoryureppa','236236P','S','false,'false)
+INSERT INTO SpecialMoves values('','2','Shinryuken','236236PPP','U','true','false')
+INSERT INTO SpecialMoves values('','2','Guren Senpukyaku','236236KKK','U','true','false')
+INSERT INTO SpecialMoves values('','2','Inazuma Kick','4MK','u','false','false')
+INSERT INTO SpecialMoves values('','2','Forward Step Kick','6MK','u','false','false')
+INSERT INTO SpecialMoves values('','2','Thunder Kick','6FK','u','false','false') //maintenir K pour feinter
+INSERT INTO SpecialMoves values('','2','Target Combo','MP>FP','u','false','false') //prés adversaire
+
+// E.Honda
+
+INSERT INTO SpecialMoves values('','3','Hundred Hand Slap','SP','s','false','true')
+INSERT INTO SpecialMoves values('','3','Sumo Headbutt','C46P','s','true','true')
+INSERT INTO SpecialMoves values('','3','Sumo Smash','C28K','s','false','true')
+INSERT INTO SpecialMoves values('','3','Olcho Throw','63214P','s','false','true')
+INSERT INTO SpecialMoves values('','3','Super Killer Head Ram','C46?P','S','false','false') //PAS FINI
+INSERT INTO SpecialMoves values('','3','Ultimate Killer Head Ram','C46?PPP','U','true','false') //PAS FINI
+INSERT INTO SpecialMoves values('','3','Orochi Breaker','6321463214PPP','U','false','false')
+INSERT INTO SpecialMoves values('','3','Shikofumi','3FK','u','false','false')
+INSERT INTO SpecialMoves values('','3','Target Combo','MP>3FK','u','false','false') //prés de l'adversaire
+
+// Ibuki
+
+INSERT INTO SpecialMoves values('','4','Kunai','236P','s','false','true')
+INSERT INTO SpecialMoves values('','4','Tsuijigoe','623P','s','false','false')
+INSERT INTO SpecialMoves values('','4','Neck Breaker','41236P','s','true','true')
+INSERT INTO SpecialMoves values('','4','Raida',63214P,'s','true','true')
+INSERT INTO SpecialMoves values('','4','Kasumi Gake','236K','s','false','false')
+INSERT INTO SpecialMoves values('','4','Kazegiri','623K','s','false','true')
+INSERT INTO SpecialMoves values('','4','Tsumuji','214K','s','false','true')
+INSERT INTO SpecialMoves values('','4','Tsumuji>Followup Attack','214K>K|2K','s','false','false')
+INSERT INTO SpecialMoves values('','4','Hien','421K','s','false','true')
+INSERT INTO SpecialMoves values('','4','Kasumi Suzaku','J236236P','S','false','false')
+INSERT INTO SpecialMoves values('','4','Yoroitoshi','4123641236PPP','U','false','false')
+INSERT INTO SpecialMoves values('','4','Hashinsho','236236KKK','U','true','false')
+INSERT INTO SpecialMoves values('','4','Agemen','4MP','u','false','false')
+INSERT INTO SpecialMoves values('','4','Backhand Punch','FP>FP','u','false','false') // loin de l'adversaire
+INSERT INTO SpecialMoves values('','4','Spin Kick','6LK','u','false','false')
+INSERT INTO SpecialMoves values('','4','Reverse Spin Kick','4MK','u','false','false')
+INSERT INTO SpecialMoves values('','4','Hammer Kick','6MK','u','false','false')
+INSERT INTO SpecialMoves values('','4','Sazan','3MK','u','false','false')
+INSERT INTO SpecialMoves values('','4','Bonsho Kick','6FK','u','false','false')
+INSERT INTO SpecialMoves values('','4','High Jump','','u','false','false') // A REVOIR
+INSERT INTO SpecialMoves values('','4','Target Combo 1','JFP>6MP','u','false','false')
+INSERT INTO SpecialMoves values('','4','Target Combo 2','LP>6FP','u','false','false') // pendant saut en diagonale
+INSERT INTO SpecialMoves values('','4','Target Combo 3','LK>6MK','u','false','false') //pendant saut en diagonale
+INSERT INTO SpecialMoves values('','4','Target Combo 4','LP>MP>FP','u','false','false') //prés de l'adversaire
+INSERT INTO SpecialMoves values('','4','Target Combo 5,'LP>MP>6LK','u','false','false') //loin de l'adversaire
+INSERT INTO SpecialMoves values('','4','Target Combo 6,'LP>MP>2FK>FK','u','false','false') //prés de l'adversaire
+INSERT INTO SpecialMoves values('','4','Target Combo 7,'4MK>6MK','u','false','false')
+INSERT INTO SpecialMoves values('','4','Target Combo 8,'FP>2FK>FK,'u','false','false') //prés de l'adversaire
+INSERT INTO SpecialMoves values('','4','Target Combo 9,'LK>MK>FK','u','false','false')
+INSERT INTO SpecialMoves values('','4','Target Combo 10,'FK>FK','u','false','false') //accroupi 
