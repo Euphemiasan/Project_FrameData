@@ -30,7 +30,8 @@ public class InterfaceGraphique
 		}
 		
 		CreateBase cb = new CreateBase();
-	//	cb.create();
+
+		cb.create();
 		cb.insert();
 //		cb.close();
 		

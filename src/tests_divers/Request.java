@@ -54,8 +54,7 @@ public class Request
 		StringBuilder s = new StringBuilder();
 		StringBuilder resultat = new StringBuilder();
 		try {
-			s.append("Select move_name, move_input from SpecialMoves where fighter_id = '").append(n).append("'");
-			System.out.println(s.toString());
+			s.append("Select* from SpecialMoves where fighter_id = '").append(n).append("'");
 			ResultSet res = localStat.executeQuery(s.toString());
 			ResultSetMetaData m = res.getMetaData();
 			while(res.next())
