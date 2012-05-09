@@ -1,4 +1,4 @@
-package tests_divers;
+package others;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

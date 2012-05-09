@@ -1,4 +1,4 @@
-package tests_divers;
+package others;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

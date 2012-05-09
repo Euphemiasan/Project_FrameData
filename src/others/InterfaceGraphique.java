@@ -1,4 +1,4 @@
-package tests_divers;
+package others;
 
 import java.awt.Color;
 import java.awt.Container;
