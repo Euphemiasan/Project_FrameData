@@ -195,9 +195,61 @@ INSERT INTO SpecialMoves values('','8','Shin Shoryuken','236236PPP','U','true','
 INSERT INTO SpecialMoves values('','8','Denjin Hadoken','236236KKK','U','false','false','maintenir KKK pour changet d\'effet')
 
 //Akuma
+INSERT INTO SpecialMoves values('','9','Goshoda','6|NLPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','9','Syuretto','4LPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','9,'Zugaihasatsu','6MP','u','false','false','')
+INSERT INTO SpecialMoves values('','9','Tenmakujinkyaku','2MK','u','false','false','PR au sommet d un saut en avant')
+INSERT INTO SpecialMoves values('','9','Gohadoken','236P','s','false','true','')
+INSERT INTO SpecialMoves values('','9','Shakunetsu Hadoken','63214P','s','false','true','')
+INSERT INTO SpecialMoves values('','9','Zanku Hadoken','236P','s','false','false','PR en l air')
+INSERT INTO SpecialMoves values('','9','Goshoryuken','623P','s','false','true','')
+INSERT INTO SpecialMoves values('','9',Tatsumaki Zankukyaku','214K','s','false,'true','')
+INSERT INTO SpecialMoves values('','9','Airborne Tatsumaki Zankukyaku','214K','false','false','PR en l air')
+INSERT INTO SpecialMoves values('','9','Hyakkishu','623K','s','false','true','')
+INSERT INTO SpecialMoves values('','9','Hyakkishu>Hyakki Gozan','s','623K>NO','s','false','false','')
+INSERT INTO SpecialMoves values('','9','Hyakkishu>Hyakki Gosho','s','623K>P','s','true','false','')
+INSERT INTO SpecialMoves values('','9','Hyakkishu>Hyakki Gojin','s','623K>K','s','false','false','')
+INSERT INTO SpecialMoves values('','9','Hyakkishu>Hyakki Gosai','s','623K>LPK','s','false','false','')
+INSERT INTO SpecialMoves values('','9','Ashura Senku','623|421PPP|KKK','s','false','false','')
+INSERT INTO SpecialMoves values('','9','Raging Demon','LPLP6LKHP','S','false','false','') 
+INSERT INTO SpecialMoves values('','9','Wrath og the Raging Demon','LPLP4LKHP','U','false','false','')
+INSERT INTO SpecialMoves values('','9','Demon Armageddon','88KKK','U','true','false','')
+
 //Gen
+INSERT INTO SpecialMoves values('','10','Shuraku','6|NLPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','10','Hozen','4LPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','10','Change Style : Mantis','PPP','u','false','false','PR pendant style Crane,CS')
+INSERT INTO SpecialMoves values('','10','Shakudan','HK>HK','u','false','false','PR en l air, CS')
+INSERT INTO SpecialMoves values('','10','
+
 //Dan
+INSERT INTO SpecialMoves values('','11','Gado Thrust','6|NLPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','11','Saikyo Haraigoshi','4LPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','11','Jumping Taunt','HPK','u','false','false','PR en l air')
+INSERT INTO SpecialMoves values('','11','Ducking Taunt','2HPK','u','false','false','')
+INSERT INTO SpecialMoves values('','11','Gadoken','236P','s','false','true','')
+INSERT INTO SpecialMoves values('','11','Koryuken','623P','s','false,'true','')
+INSERT INTO SpecialMoves values('','11','Dankukyaku','214K','s','true','true','')
+INSERT INTO SpecialMoves values('','11','Airborne Dankukyaku','214K','false','true','PR en l air')
+INSERT INTO SpecialMoves values('','11','Hissho Buraiken','236236P,'S','false','false','')
+INSERT INTO SpecialMoves values('','11','Legendary Taunt','236236HPK','S','false','false','')
+INSERT INTO SpecialMoves values('','11','Shisso Buraiken','236236PPP','U','false','false','')
+INSERT INTO SpecialMoves values('','11','Haoh Gadoken','236236KKK','U','false','false','')
+
 //Sakura
+INSERT INTO SpecialMoves values('','12','Sailor Shot','6|NLPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','12','Choba Throw','4LPK','t','false','false','PR près adversaire')
+INSERT INTO SpecialMoves values('','12','Flower Kick','6MK','u','false','false','')
+INSERT INTO SpecialMoves values('','12','Hadoken','236P','s','false','true','maintenir P pour changer d effet')
+INSERT INTO SpecialMoves values('','12','Shouoken','623P','s','false','true','')
+INSERT INTO SpecialMoves values('','12','Shunpukyaku','214K','s','true','true','')
+INSERT INTO SpecialMoves values('','12','Airborne Shunpukyaku','214K','s','false','true','PR en l air')
+INSERT INTO SpecialMoves values('','12','Sakura Otoshi',623K','s','false','true','P trois fois apres coup pour enchainer')
+INSERT INTO SpecialMoves values('','12','Haru Ichiban','214214K','S','false','false','')
+INSERT INTO SpecialMoves values('','12','Haru Ranman','214214KKK','U','true','false','')
+INSERT INTO SpecialMoves values('','12','Shinku Hadoken','236236PPP','U','false','false','')
+INSERT INTO SpecialMoves values('','12','Shinku Tengyo Hadoken','236236KKK','U','false','false','')
+
 //Oni
 //Yun
 //Juri
