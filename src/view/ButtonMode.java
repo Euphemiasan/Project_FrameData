@@ -19,15 +19,16 @@ public class ButtonMode extends JButton implements ActionListener
 	private final String[] ICONS = {"mode_list.png", "mode_input.png"};
 	private final String[] ICONS_ROLLOVER = {"mode_list_rollover.png", "mode_input_rollover.png"};
 	
-	public ButtonMode () 
+	public ButtonMode ()
 	{
 		mode_selected = 0;
+		
 		updateIcon();
-
+		
 		addActionListener(this);
 	}
 	
-	public void changeMode () 
+	public void changeMode ()
 	{
 		if (mode_selected == 1)
 			mode_selected = 0;
@@ -54,18 +55,20 @@ public class ButtonMode extends JButton implements ActionListener
 		}
 	}
 	
-	public void actionPerformed (ActionEvent ae) {
+	public void actionPerformed (ActionEvent ae)
+	{
 		changeMode();
 	}
 
 	// Redifinition de paintComponent pour enlever les propriétés basiques du JButton
-	protected void paintComponent (Graphics g) {
+	protected void paintComponent (Graphics g)
+	{
 		super.paintComponent(g);
 		
 		setSize(75, 75);
 		setContentAreaFilled(false); // Enlève le fond par défaut des JButton
 		setFocusPainted(false); // Enlève le cadre qui s'affiche une fois qu'on clique dessus
-		setBorder(null); // Enlève les bordures du bouton et l'effet du survol
+		setBorder(null); // Enlève les bordures du bouton et son effet du survol
 	}
 	
 	public int getMode ()

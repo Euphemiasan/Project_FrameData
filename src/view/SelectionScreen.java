@@ -1,9 +1,17 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,38 +21,40 @@ import controller.ButtonsListerner;
 public class SelectionScreen extends JPanel
 {
 	private static final long serialVersionUID = 1L;
+	
+	private int mode;
 
-	public SelectionScreen () 
+	public SelectionScreen ()
 	{
 		super();
 		
-		setSize(1100, 225);
+		setPreferredSize(new Dimension(1100, 600));
 		setBackground(new Color(156, 47, 47));
-
+		setLayout(new BorderLayout());
+		//
 		JLabel title = new JLabel(new ImageIcon("images/selection_screen/title.png"));
-		add(title);
+		add(title, BorderLayout.NORTH);
 		
-		// Creation Panel pour les boutons
-		JPanel buttons_panel = new JPanel();
-		add(buttons_panel);
+		//
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setPreferredSize(new Dimension(1100, 275));
+		buttonPanel.setOpaque(false);
+		add(buttonPanel, BorderLayout.SOUTH);
 		
-		GridBagLayout layout = new GridBagLayout();
-		buttons_panel.setLayout(layout);
-		GridBagConstraints layout_rules = new GridBagConstraints();
-		layout_rules.fill = GridBagConstraints.BOTH;
+		//
+		GridBagLayout buttonLayout = new GridBagLayout();
+		buttonPanel.setLayout(buttonLayout);
 
+		GridBagConstraints layout_rules = new GridBagConstraints();
+		layout_rules.fill = GridBagConstraints.NONE;
+		layout_rules.gridwidth = 1;
+		layout_rules.gridheight = 1;
+		layout_rules.weightx = 0;
+		layout_rules.weighty = 0;
+		int x, y;
+		
 		ButtonFighter fighter = null;
 		ButtonsListerner fighters_listener = new ButtonsListerner();
-		int x, y;
-		int width = 4;
-		int height = 1;
-		double px = 0;
-		double py = 0;
-		
-		layout_rules.gridwidth = width;
-		layout_rules.gridheight = height;
-		layout_rules.weightx = px;
-		layout_rules.weighty = py;
 		
 		for (int i=1; i<=39; i++)
 		{
@@ -55,29 +65,44 @@ public class SelectionScreen extends JPanel
 			{
 				if (i > 27)
 				{
-					x = (i - 28) * 4; 
-					y = 2;
+					x = (i - 28); 
+					y = 3;
 				}
 				else
 				{
-					x = ((i - 14) *4);
-					y = 1;
+					x = (i - 14);
+					y = 2;
 				}
 			}
 			else
 			{
-				x = (i * 4);
-				y = 0;
+				x = i;
+				y = 1;
 			}
 			
 			layout_rules.gridx = x;
 			layout_rules.gridy = y;
-			buttons_panel.add(fighter, layout_rules);
+			buttonPanel.add(fighter, layout_rules);
 		}
 		
-		layout_rules.gridx = 12 * 4;
-		layout_rules.gridy = 2;
+		layout_rules.gridx = 12;
+		layout_rules.gridy = 3;
 		ButtonMode mode = new ButtonMode();
-		buttons_panel.add(mode, layout_rules);
+		buttonPanel.add(mode, layout_rules);
+		
+		System.out.println(title.getSize().width + " : "+ title.getSize().height);
+	}
+	
+	protected void paintComponent (Graphics g)
+	{
+		try
+		{
+		BufferedImage image = ImageIO.read(new File("images/fond.jpg"));
+		g.drawImage(image, 0, 0, null);
+		}
+		catch (IOException e)
+		{
+		e.printStackTrace();
+		}
 	}
 }
