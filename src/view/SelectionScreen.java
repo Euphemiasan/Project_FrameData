@@ -1,14 +1,10 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -39,8 +35,8 @@ public class SelectionScreen extends JPanel
 		try
 		{
 			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
-			//background = ImageIO.read(new File("images/background/1.jpg"));
-			background = ImageIO.read(new File("images/background/"+background_nb+".jpg"));
+			background = ImageIO.read(new File("images/background/6.jpg"));
+			//background = ImageIO.read(new File("images/background/"+background_nb+".jpg"));
 		}
 		catch (IOException ioe)
 		{
