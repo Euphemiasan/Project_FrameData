@@ -202,8 +202,35 @@ public class ShowMoveList
 						namePic.delete(0, namePic.length()-1);
 						break;
 				case 11:
-						
-			
+						if (current == '3')
+						{
+							state = 12;
+							namePic.append(current);
+							index++;
+							current = move.charAt(index);
+						}
+						else if (current == '2')
+							{
+								state = 15;
+								namePic.append(current);
+								index++;
+								current = move.charAt(index);
+							}
+							else
+								state = 16;
+						break;
+				case 12:
+						index = index + 4;
+						if (current == '7')
+						{
+							state = 13;
+							namePic.append(current);
+							index++;
+							current = move.charAt(index);
+						}
+						else
+							state = 14;
+						break;
 			}
 			
 		}
