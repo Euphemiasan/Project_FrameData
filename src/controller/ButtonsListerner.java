@@ -1,9 +1,11 @@
-package others;
+package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class BoutonsListerner implements ActionListener{
+import others.Request;
+
+public class ButtonsListerner implements ActionListener{
 	
 	Request r = new Request();
 	

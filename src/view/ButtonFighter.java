@@ -1,4 +1,4 @@
-package others;
+package view;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -9,10 +9,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class BoutonFighter extends JButton {
+public class ButtonFighter extends JButton
+{
+	private static final long serialVersionUID = 1L;
+	
 	private int id_fighter;
 	
-	public BoutonFighter (int id) {
+	public ButtonFighter (int id) {
 		id_fighter = id;
 		setActionCommand(String.valueOf(id_fighter));
 		
