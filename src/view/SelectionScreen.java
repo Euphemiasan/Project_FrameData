@@ -3,9 +3,12 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +17,10 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import controller.ButtonsListerner;
+import controller.NameListener;
 
 public class SelectionScreen extends JPanel
 {
@@ -33,8 +38,8 @@ public class SelectionScreen extends JPanel
 		// Background
 		try
 		{
-			int background_nb = (int) (1 + Math.random() * (3 - 1 + 1));
-
+			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
+			//background = ImageIO.read(new File("images/background/1.jpg"));
 			background = ImageIO.read(new File("images/background/"+background_nb+".jpg"));
 		}
 		catch (IOException ioe)
@@ -46,6 +51,12 @@ public class SelectionScreen extends JPanel
 		// Title
 		JLabel title = new JLabel(new ImageIcon("images/selection_screen/title.png"));
 		add(title, BorderLayout.NORTH);
+		
+		// Name
+		JLabel name = new JLabel();
+		add(name, BorderLayout.CENTER);
+		name.setHorizontalAlignment(JTextField.LEFT);
+		name.setVerticalAlignment(JTextField.BOTTOM);
 		
 		// Buttons Panel
 		JPanel buttonPanel = new JPanel();
@@ -63,7 +74,7 @@ public class SelectionScreen extends JPanel
 		layout_rules.weightx = 0;
 		layout_rules.weighty = 0;
 		int x, y;
-		
+
 		ButtonFighter fighter = null;
 		ButtonsListerner fighters_listener = new ButtonsListerner();
 		
@@ -72,6 +83,7 @@ public class SelectionScreen extends JPanel
 		{
 			fighter = new ButtonFighter(i);
 			fighter.addActionListener(fighters_listener);
+			fighter.addMouseListener(new NameListener(name));
 			
 			// Si l'id est > 13 on gère la 2e ou 3e ligne [..1]
 			if (i > 13)

@@ -5,11 +5,12 @@ import java.awt.event.ActionListener;
 
 import others.Request;
 
-public class ButtonsListerner implements ActionListener{
-	
+public class ButtonsListerner implements ActionListener
+{	
 	Request r = new Request();
 	
-	public void actionPerformed(ActionEvent ae) {
+	public void actionPerformed(ActionEvent ae)
+	{
 		r.showChar(ae.getActionCommand());
 		r.showMove(ae.getActionCommand());
 	}
