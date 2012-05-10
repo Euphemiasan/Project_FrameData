@@ -6,6 +6,10 @@ import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 
+import controller.ButtonsListerner;
+
+import view.ButtonFighter;
+
 public class InterfaceGraphique
 {
 
@@ -13,18 +17,18 @@ public class InterfaceGraphique
 	{
 		JFrame fenetre = new JFrame();
 		fenetre.setTitle("Test boutons fighter");
-		fenetre.setSize(1100, 450);
+		fenetre.setSize(1200, 450);
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container contenu = fenetre.getContentPane();
 		contenu.setBackground(new Color(156, 47, 47));
 		contenu.setLayout(new FlowLayout());
 		
-		BoutonsListerner bouton_listener = new BoutonsListerner();
+		ButtonsListerner bouton_listener = new ButtonsListerner();
 		
 		for (int i=1; i<=39; i++)
 		{
-			BoutonFighter bouton_fighter = new BoutonFighter(i);
+			ButtonFighter bouton_fighter = new ButtonFighter(i);
 			bouton_fighter.addActionListener(bouton_listener);
 			contenu.add(bouton_fighter);
 		}
