@@ -17,6 +17,7 @@ public class Project_FrameData extends JFrame
 	private static final long serialVersionUID = 1L;
 
 	SelectionScreen screen1;
+	FighterScreen screen2;
 	
 	public Project_FrameData ()
 	{
@@ -26,8 +27,9 @@ public class Project_FrameData extends JFrame
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		screen1 = new SelectionScreen();
-		setContentPane(screen1);
+		//screen1 = new SelectionScreen();
+		screen2 = new FighterScreen();
+		setContentPane(screen2);
 		
 		// La méthode pack permet de fixer une taille a la JFrame en conservant PreferredSize de son JPanel
 		pack();
