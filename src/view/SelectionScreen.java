@@ -36,7 +36,7 @@ public class SelectionScreen extends JPanel
 		{
 			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
 			//background = ImageIO.read(new File("images/background/6.jpg"));
-			background = ImageIO.read(new File("images/background/"+background_nb+".jpg"));
+			background = ImageIO.read(new File("images/selection_screen/background"+background_nb+".jpg"));
 		}
 		catch (IOException ioe)
 		{
@@ -69,10 +69,13 @@ public class SelectionScreen extends JPanel
 		layout_rules.gridheight = 1;
 		layout_rules.weightx = 0;
 		layout_rules.weighty = 0;
-		int x, y;
-
+		
+		// Création ButtonMode
+		ButtonMode mode = new ButtonMode();
+		
 		ButtonFighter fighter = null;
-		ButtonsListerner fighters_listener = new ButtonsListerner();
+		ButtonsListerner fighters_listener = new ButtonsListerner(mode);
+		int x, y;
 		
 		// Algorithme de positionnement des boutons
 		for (int i=1; i<=39; i++)
@@ -109,10 +112,9 @@ public class SelectionScreen extends JPanel
 			buttonPanel.add(fighter, layout_rules);
 		}
 		
-		// Bouton mode qui permet de choisir entre le mode MoveList et FrameData
+		// On place le ButtonMode à la fin 
 		layout_rules.gridx = 12;
 		layout_rules.gridy = 3;
-		ButtonMode mode = new ButtonMode();
 		buttonPanel.add(mode, layout_rules);
 	}
 	

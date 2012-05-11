@@ -9,7 +9,7 @@ import javax.swing.JFrame;
  * Classe principale du projet FrameData
  * 
  * @author Joseph Nguyen
- * @author Aurélien Michalinko
+ * @author AurÃ©lien Michalinko
  *
  */
 public class Project_FrameData extends JFrame
@@ -29,10 +29,10 @@ public class Project_FrameData extends JFrame
 		screen1 = new SelectionScreen();
 		setContentPane(screen1);
 		
-		// La méthode pack permet de fixer une taille a la JFrame en conservant PreferredSize de son JPanel
+		// La mÃ©thode pack permet de fixer une taille a la JFrame en conservant PreferredSize de son JPanel
 		pack();
 
-		// Positionne la fenêtre au milieu de l'écran
+		// Positionne la fenÃªtre au milieu de l'Ã©cran
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int width = getSize().width;
 		int height = getSize().height;

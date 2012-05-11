@@ -22,7 +22,7 @@ public class ButtonFighter extends JButton
 		
 		try
 		{
-			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+id+".png"));
+			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+id_fighter+".png"));
 			BufferedImage icon_rollover = createRolloverIcon(icon);
 			
 			setIcon(new ImageIcon(icon));
@@ -35,18 +35,18 @@ public class ButtonFighter extends JButton
 		}
 	}
 		
-	// Redifinition de paintComponent pour enlever les propriétés basiques du JButton
+	// Redifinition de paintComponent pour enlever les propriï¿½tï¿½s basiques du JButton
 	protected void paintComponent (Graphics g)
 	{
 		super.paintComponent(g);
 		
 		setSize(75, 75);
-		setContentAreaFilled(false); // Enlève le fond par défaut des JButton
-		setFocusPainted(false); // Enlève le cadre qui s'affiche une fois qu'on clique dessus
-		setBorder(null); // Enlève les bordures du bouton et son effet du survol
+		setContentAreaFilled(false); // Enlï¿½ve le fond par dï¿½faut des JButton
+		setFocusPainted(false); // Enlï¿½ve le cadre qui s'affiche une fois qu'on clique dessus
+		setBorder(null); // Enlï¿½ve les bordures du bouton et son effet du survol
 	}
 	
-	// Méthode qui fusionne 2 images en une nouvelle
+	// Mï¿½thode qui fusionne 2 images en une nouvelle
 	public static BufferedImage createRolloverIcon(BufferedImage icon)
 	{
 		BufferedImage icon_rollover = null;
@@ -66,7 +66,7 @@ public class ButtonFighter extends JButton
 		}
 		catch (IOException ioe)
 		{
-			System.out.println("Display Icon Problem");
+			System.out.println("Display RolloverIcon Problem");
 			ioe.printStackTrace();
 		}
 		

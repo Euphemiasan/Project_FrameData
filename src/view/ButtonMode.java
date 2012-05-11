@@ -60,15 +60,15 @@ public class ButtonMode extends JButton implements ActionListener
 		changeMode();
 	}
 
-	// Redifinition de paintComponent pour enlever les propriétés basiques du JButton
+	// Redifinition de paintComponent pour enlever les propriï¿½tï¿½s basiques du JButton
 	protected void paintComponent (Graphics g)
 	{
 		super.paintComponent(g);
 		
 		setSize(75, 75);
-		setContentAreaFilled(false); // Enlève le fond par défaut des JButton
-		setFocusPainted(false); // Enlève le cadre qui s'affiche une fois qu'on clique dessus
-		setBorder(null); // Enlève les bordures du bouton et son effet du survol
+		setContentAreaFilled(false); // Enlï¿½ve le fond par dï¿½faut des JButton
+		setFocusPainted(false); // Enlï¿½ve le cadre qui s'affiche une fois qu'on clique dessus
+		setBorder(null); // Enlï¿½ve les bordures du bouton et son effet du survol
 	}
 	
 	public int getMode ()
