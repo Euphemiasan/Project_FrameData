@@ -16,12 +16,12 @@ public class ButtonMode extends JButton implements ActionListener
 	private static final long serialVersionUID = 1L;
 	
 	private int mode_selected;
-	private final String[] ICONS = {"mode_list.png", "mode_input.png"};
-	private final String[] ICONS_ROLLOVER = {"mode_list_rollover.png", "mode_input_rollover.png"};
+	private String[] ICONS = {"mode_list.png", "mode_input.png"};
+	private String[] ICONS_ROLLOVER = {"mode_list_rollover.png", "mode_input_rollover.png"};
 	
 	public ButtonMode ()
 	{
-		mode_selected = 0;
+		mode_selected = 1;
 		
 		updateIcon();
 		
@@ -31,7 +31,7 @@ public class ButtonMode extends JButton implements ActionListener
 	public void changeMode ()
 	{
 		if (mode_selected == 1)
-			mode_selected = 0;
+			mode_selected = 2;
 		else
 			mode_selected = 1;
 		
@@ -42,10 +42,10 @@ public class ButtonMode extends JButton implements ActionListener
 	{
 		try
 		{
-			BufferedImage icon = ImageIO.read(new File("images/selection_screen/buttons/"+ICONS[mode_selected]));
+			BufferedImage icon = ImageIO.read(new File("images/selection_screen/buttons/"+ICONS[mode_selected-1]));
 			setIcon(new ImageIcon(icon));
 			
-			icon = ImageIO.read(new File("images/selection_screen/buttons/"+ICONS_ROLLOVER[mode_selected]));
+			icon = ImageIO.read(new File("images/selection_screen/buttons/"+ICONS_ROLLOVER[mode_selected-1]));
 			setRolloverIcon(new ImageIcon(icon));
 		}
 		catch (IOException ioe)

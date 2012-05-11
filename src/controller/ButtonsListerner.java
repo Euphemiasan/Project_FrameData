@@ -3,19 +3,21 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.Fighter;
 import model.Request;
 
 import view.ButtonMode;
+import view.Project_FrameData;
 
 public class ButtonsListerner implements ActionListener
 {	
 	private ButtonMode mode;
+	private Project_FrameData mainJFrame;
 	private Request r = new Request();
 	
-	public ButtonsListerner (ButtonMode bm)
+	public ButtonsListerner (Project_FrameData jframe, ButtonMode button_mode)
 	{
-		mode = bm;
+		mode = button_mode;
+		mainJFrame = jframe;
 	}
 	
 	public void actionPerformed(ActionEvent ae)
@@ -24,7 +26,11 @@ public class ButtonsListerner implements ActionListener
 		//r.showMove(ae.getActionCommand());
 		//Fighter current = r.returnFighter(ae.getActionCommand());
 		//System.out.println("--"+current.getFighter_id()+" "+current.getFighter_name()+"--");
-		System.out.println("MODE : " + mode.getMode() + " | ID : " + ae.getActionCommand());
+		
+		int screen_nb = mode.getMode();
+		int fighter_id = Integer.parseInt(ae.getActionCommand());
+		
+		mainJFrame.setScreen(screen_nb, fighter_id);
 	}
 	
 }

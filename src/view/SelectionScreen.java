@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Window;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 import controller.ButtonsListerner;
 import controller.NameListener;
@@ -22,11 +24,15 @@ public class SelectionScreen extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 	
+	private Project_FrameData main_window;
+	
 	private BufferedImage background;
 
-	public SelectionScreen ()
+	public SelectionScreen (Project_FrameData windows)
 	{
 		super();
+		
+		main_window = windows;
 		
 		setPreferredSize(new Dimension(1100, 700));
 		setLayout(new BorderLayout());
@@ -74,7 +80,7 @@ public class SelectionScreen extends JPanel
 		ButtonMode mode = new ButtonMode();
 		
 		ButtonFighter fighter = null;
-		ButtonsListerner fighters_listener = new ButtonsListerner(mode);
+		ButtonsListerner fighters_listener = new ButtonsListerner(main_window, mode);
 		int x, y;
 		
 		// Algorithme de positionnement des boutons

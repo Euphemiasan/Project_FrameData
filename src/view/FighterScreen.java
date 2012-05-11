@@ -8,17 +8,19 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class FighterScreen extends JPanel
 {
+	private int fighter_id;
 
-	public FighterScreen ()
+	public FighterScreen (int id)
 	{
 		super();
+		
+		fighter_id = id;
 		
 		setPreferredSize(new Dimension(1100, 700));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
@@ -51,6 +53,7 @@ public class FighterScreen extends JPanel
 		}
 		leftPanel.add(buttonList);
 
+		// Deuxieme Bouton "FrameData"
 		JButton buttonFrame = new JButton();
 		buttonFrame.setBounds(150, 0, 150, 50);
 		buttonFrame.setContentAreaFilled(false);
