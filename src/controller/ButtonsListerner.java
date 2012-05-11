@@ -3,7 +3,8 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import others.Request;
+import model.Request;
+
 import view.ButtonMode;
 
 public class ButtonsListerner implements ActionListener
