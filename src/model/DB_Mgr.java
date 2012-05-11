@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -14,12 +14,12 @@ import java.sql.Statement;
  * 
  * @author Alexandre Leblond
  * edit AL 4/5/12
- */
+ 
 
 //Il faudra revoir pas mal de choses une fois la bdd prete comme les requetes, drivers, appels sur les colonnes
 
 public class DB_Mgr {
-	//Classe qui gère la connexion et les requêtes de la base de données
+	//Classe qui gï¿½re la connexion et les requï¿½tes de la base de donnï¿½es
 	
 	//Attributs
 	private Connection db_connection;
@@ -42,14 +42,14 @@ public class DB_Mgr {
 			e.printStackTrace();
 		}
 		
-		//TODO connexion à la base de donnée par singleton.
+		//TODO connexion ï¿½ la base de donnï¿½e par singleton.
 	}
 	
 	/**
 	 * Return a Fighter from database avec sa move list incluse
 	 * @param id du Fighter
 	 * @return object fighter
-	 */
+	 
 	public Fighter getFighter(int id) {
 		ResultSet results;
 		Fighter fighter;
@@ -106,3 +106,4 @@ public class DB_Mgr {
 	}
 	
 }
+*/
