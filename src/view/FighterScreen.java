@@ -3,8 +3,14 @@ package view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class FighterScreen extends JPanel
@@ -25,19 +31,47 @@ public class FighterScreen extends JPanel
 		leftPanel.setBackground(Color.RED);
 		add(leftPanel);
 
+		// Premier Bouton "MoveList"
+		JButton buttonList = new JButton();
+		buttonList.setBounds(0, 0, 150, 50);
+		buttonList.setContentAreaFilled(false);
+		buttonList.setFocusPainted(false);
+		buttonList.setBorder(null);
+		try
+		{
+		BufferedImage icon = ImageIO.read(new File("images/description_screen/buttons/move_list.jpg"));
+		buttonList.setIcon(new ImageIcon(icon));
+		icon = ImageIO.read(new File("images/description_screen/buttons/move_list_rollover.jpg"));
+		buttonList.setRolloverIcon(new ImageIcon(icon));
+		}
+		catch (IOException ioe)
+		{
+			System.out.println("Display Button Problem");
+			ioe.printStackTrace();
+		}
+		leftPanel.add(buttonList);
 
-		JPanel button1 = new JPanel();
-		button1.setBounds(0, 0, 150, 100);
-		button1.setBackground(Color.YELLOW);
-		leftPanel.add(button1);
-
-		JPanel button2 = new JPanel();
-		button2.setBounds(150, 0, 150, 100);
-		button2.setBackground(Color.BLUE);
-		leftPanel.add(button2);
+		JButton buttonFrame = new JButton();
+		buttonFrame.setBounds(150, 0, 150, 50);
+		buttonFrame.setContentAreaFilled(false);
+		buttonFrame.setFocusPainted(false);
+		buttonFrame.setBorder(null);
+		try
+		{
+		BufferedImage icon = ImageIO.read(new File("images/description_screen/buttons/frame_data.jpg"));
+		buttonFrame.setIcon(new ImageIcon(icon));
+		icon = ImageIO.read(new File("images/description_screen/buttons/frame_data_rollover.jpg"));
+		buttonFrame.setRolloverIcon(new ImageIcon(icon));
+		}
+		catch (IOException ioe)
+		{
+			System.out.println("Display Button Problem");
+			ioe.printStackTrace();
+		}
+		leftPanel.add(buttonFrame);
 		
 		JPanel name = new JPanel();
-		name.setBounds(0, 100, 300, 150);
+		name.setBounds(0, 50, 300, 150);
 		name.setBackground(Color.WHITE);
 		leftPanel.add(name);
 		
