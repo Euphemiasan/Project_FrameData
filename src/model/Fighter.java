@@ -14,7 +14,7 @@ import java.util.Iterator;
 
 public class Fighter 
 {
-	
+	//
 	private int fighter_id;
 	private String fighter_name;
 	private HashMap<String, Move> fighter_moves; //cl� : nom du coup, valeur : frame data. //AL 4/5/12
