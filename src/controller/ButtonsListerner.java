@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.Fighter;
 import model.Request;
 
 import view.ButtonMode;
@@ -10,7 +11,7 @@ import view.ButtonMode;
 public class ButtonsListerner implements ActionListener
 {	
 	private ButtonMode mode;
-	//private Request r = new Request();
+	private Request r = new Request();
 	
 	public ButtonsListerner (ButtonMode bm)
 	{
@@ -21,7 +22,8 @@ public class ButtonsListerner implements ActionListener
 	{
 		//r.showChar(ae.getActionCommand());
 		//r.showMove(ae.getActionCommand());
-		
+		//Fighter current = r.returnFighter(ae.getActionCommand());
+		//System.out.println("--"+current.getFighter_id()+" "+current.getFighter_name()+"--");
 		System.out.println("MODE : " + mode.getMode() + " | ID : " + ae.getActionCommand());
 	}
 	
