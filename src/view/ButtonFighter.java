@@ -41,12 +41,12 @@ public class ButtonFighter extends JButton
 		super.paintComponent(g);
 		
 		setSize(75, 75);
-		setContentAreaFilled(false); // Enl�ve le fond par d�faut des JButton
-		setFocusPainted(false); // Enl�ve le cadre qui s'affiche une fois qu'on clique dessus
-		setBorder(null); // Enl�ve les bordures du bouton et son effet du survol
+		setContentAreaFilled(false); // Enlève le fond par défaut des JButton
+		setFocusPainted(false); // Enlève le cadre qui s'affiche une fois qu'on clique dessus
+		setBorder(null); // Enlève les bordures du bouton et son effet du survol
 	}
 	
-	// M�thode qui fusionne 2 images en une nouvelle
+	// Méthode qui fusionne 2 images en une nouvelle
 	public static BufferedImage createRolloverIcon(BufferedImage icon)
 	{
 		BufferedImage icon_rollover = null;
@@ -62,7 +62,6 @@ public class ButtonFighter extends JButton
 			Graphics g = icon_rollover.getGraphics();
 			g.drawImage(icon, 0, 0, null);
 			g.drawImage(selection, 0, 0, null);
-			
 		}
 		catch (IOException ioe)
 		{
