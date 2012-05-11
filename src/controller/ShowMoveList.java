@@ -513,8 +513,6 @@ public class ShowMoveList
 		{
 			System.out.println(i.next());
 		}
-		
-		
 	}
 	
 }
