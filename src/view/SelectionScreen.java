@@ -1,14 +1,10 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +35,7 @@ public class SelectionScreen extends JPanel
 		try
 		{
 			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
-			//background = ImageIO.read(new File("images/background/1.jpg"));
+			//background = ImageIO.read(new File("images/background/6.jpg"));
 			background = ImageIO.read(new File("images/background/"+background_nb+".jpg"));
 		}
 		catch (IOException ioe)
@@ -85,7 +81,7 @@ public class SelectionScreen extends JPanel
 			fighter.addActionListener(fighters_listener);
 			fighter.addMouseListener(new NameListener(name));
 			
-			// Si l'id est > 13 on gère la 2e ou 3e ligne [..1]
+			// Si l'id est > 13 on gÃ¨re la 2e ou 3e ligne [..1]
 			if (i > 13)
 			{
 				// Si l'id est > 27 on est sur la 3e ligne [..2]
@@ -101,7 +97,7 @@ public class SelectionScreen extends JPanel
 					y = 2;
 				}
 			}
-			// [1..] Sinon on place les boutons avec une indentation de 1 (i commence à 1)
+			// [1..] Sinon on place les boutons avec une indentation de 1 (i commence Ã  1)
 			else
 			{
 				x = i;
