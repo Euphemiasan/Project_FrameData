@@ -36,7 +36,7 @@ public class SelectionScreen extends JPanel
 		{
 			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
 			//background = ImageIO.read(new File("images/background/6.jpg"));
-			background = ImageIO.read(new File("images/selection_screen/background"+background_nb+".jpg"));
+			background = ImageIO.read(new File("images/selection_screen/backgrounds/"+background_nb+".jpg"));
 		}
 		catch (IOException ioe)
 		{

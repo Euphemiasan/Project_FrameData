@@ -22,7 +22,7 @@ public class ButtonFighter extends JButton
 		
 		try
 		{
-			BufferedImage icon = ImageIO.read(new File("images/selection_screen/ficon"+id_fighter+".png"));
+			BufferedImage icon = ImageIO.read(new File("images/selection_screen/buttons/"+id_fighter+".png"));
 			BufferedImage icon_rollover = createRolloverIcon(icon);
 			
 			setIcon(new ImageIcon(icon));
@@ -53,7 +53,7 @@ public class ButtonFighter extends JButton
 		
 		try
 		{
-			BufferedImage selection = ImageIO.read(new File("images/selection_screen/character_selection.png"));
+			BufferedImage selection = ImageIO.read(new File("images/selection_screen/buttons/selection.png"));
 			
 			int w = Math.max(icon.getWidth(), selection.getWidth());
 			int h = Math.max(icon.getHeight(), selection.getHeight());

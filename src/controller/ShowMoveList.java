@@ -507,7 +507,7 @@ public class ShowMoveList
 	public static void main (String args[])
 	{
 		ShowMoveList sml = new ShowMoveList();
-		ArrayList<String> test = sml.moveAnalyzer("C4646K");
+		ArrayList<String> test = sml.moveAnalyzer("C28K>7|8|9>2");
 		Iterator<String> i = test.iterator();
 		while(i.hasNext())
 		{
