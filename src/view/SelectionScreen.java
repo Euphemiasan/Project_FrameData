@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Window;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +14,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 import controller.ButtonsListerner;
 import controller.NameListener;
@@ -38,17 +36,7 @@ public class SelectionScreen extends JPanel
 		setLayout(new BorderLayout());
 		
 		// Background
-		try
-		{
-			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
-			//background = ImageIO.read(new File("images/background/6.jpg"));
-			background = ImageIO.read(new File("images/selection_screen/backgrounds/"+background_nb+".jpg"));
-		}
-		catch (IOException ioe)
-		{
-			System.out.println("Display Background Problem");
-			ioe.printStackTrace();
-		}
+		setBackgound();
 		
 		// Title
 		JLabel title = new JLabel(new ImageIcon("images/selection_screen/title.png"));
@@ -122,6 +110,19 @@ public class SelectionScreen extends JPanel
 		layout_rules.gridx = 12;
 		layout_rules.gridy = 3;
 		buttonPanel.add(mode, layout_rules);
+	}
+	
+	public void setBackgound() {
+		try
+		{
+			int background_nb = (int) (1 + Math.random() * (6 - 1 + 1));
+			background = ImageIO.read(new File("images/selection_screen/backgrounds/"+background_nb+".jpg"));
+		}
+		catch (IOException ioe)
+		{
+			System.out.println("Display Background Problem");
+			ioe.printStackTrace();
+		}
 	}
 	
 	protected void paintComponent (Graphics g)

@@ -10,16 +10,24 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import controller.ButtonsListerner;
 
 public class FighterScreen extends JPanel
 {
+	private static final long serialVersionUID = 1L;
+
+	private Project_FrameData main_window;
+	
 	private int fighter_id;
 
-	public FighterScreen (int id)
+	public FighterScreen (Project_FrameData windows, int id)
 	{
 		super();
-		
+
+		main_window = windows;
 		fighter_id = id;
 		
 		setPreferredSize(new Dimension(1100, 700));
@@ -30,7 +38,7 @@ public class FighterScreen extends JPanel
 		JPanel leftPanel = new JPanel();
 		leftPanel.setPreferredSize(new Dimension(300, 700));
 		leftPanel.setLayout(null);
-		leftPanel.setBackground(Color.RED);
+		leftPanel.setBackground(Color.GRAY);
 		add(leftPanel);
 
 		// Premier Bouton "MoveList"
@@ -41,10 +49,10 @@ public class FighterScreen extends JPanel
 		buttonList.setBorder(null);
 		try
 		{
-		BufferedImage icon = ImageIO.read(new File("images/description_screen/buttons/move_list.jpg"));
-		buttonList.setIcon(new ImageIcon(icon));
-		icon = ImageIO.read(new File("images/description_screen/buttons/move_list_rollover.jpg"));
-		buttonList.setRolloverIcon(new ImageIcon(icon));
+			BufferedImage icon = ImageIO.read(new File("images/description_screen/buttons/move_list.jpg"));
+			buttonList.setIcon(new ImageIcon(icon));
+			icon = ImageIO.read(new File("images/description_screen/buttons/move_list_rollover.jpg"));
+			buttonList.setRolloverIcon(new ImageIcon(icon));
 		}
 		catch (IOException ioe)
 		{
@@ -73,15 +81,28 @@ public class FighterScreen extends JPanel
 		}
 		leftPanel.add(buttonFrame);
 		
-		JPanel name = new JPanel();
-		name.setBounds(0, 50, 300, 150);
-		name.setBackground(Color.WHITE);
+		// Button back à la screen 0
+		JButton button_back = new JButton();
+		button_back.setActionCommand("back");
+		button_back.setBounds(10, 640, 50, 50);
+		button_back.setContentAreaFilled(false);
+		button_back.setFocusPainted(false);
+		button_back.setBorder(null);
+		button_back.setIcon(new ImageIcon("images/description_screen/buttons/back.png"));
+		ButtonsListerner back_listener = new ButtonsListerner(main_window, null);
+		button_back.addActionListener(back_listener);
+		leftPanel.add(button_back);
+		
+		// Pseudo
+		JLabel name = new JLabel(new ImageIcon("images/names/name" + fighter_id + ".png"));
+		name.setBounds(0, 500, 300, 150);
 		leftPanel.add(name);
 		
-		JPanel button_back = new JPanel();
-		button_back.setBounds(0, 650, 50, 50);
-		button_back.setBackground(Color.GRAY);
-		leftPanel.add(button_back);
+
+		String background_url = "images/description_screen/characters/" + fighter_id + "/leftbackground.png";
+		BackgroundPanel background = new BackgroundPanel(background_url);
+		background.setBounds(0, 50, 300, 650);
+		leftPanel.add(background);
 		
 	}
 }

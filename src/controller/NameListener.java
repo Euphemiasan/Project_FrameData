@@ -24,7 +24,7 @@ public class NameListener implements MouseListener
 	public void mouseEntered(MouseEvent me)
 	{
 		String id = ((ButtonFighter) me.getSource()).getActionCommand();
-		name.setIcon(new ImageIcon("images/selection_screen/name"+id+".png"));
+		name.setIcon(new ImageIcon("images/names/name"+id+".png"));
 	}
 
 	public void mouseExited(MouseEvent me)

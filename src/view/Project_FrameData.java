@@ -21,16 +21,21 @@ public class Project_FrameData extends JFrame
 	private SelectionScreen screen0;
 	private FighterScreen screen1;
 	
+	@SuppressWarnings("unused")
+	private InputScreen screen2;
+	
 	public Project_FrameData ()
 	{
 		super();
 		
 		screen = 0;
+		//On ne créer qu'une seule fois l'écran de sélection
+		screen0 = new SelectionScreen(this);
 		
 		setTitle("Project FrameData");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		setScreen(screen, 0);
 		
 		// Positionne la fenêtre au milieu de l'écran
@@ -40,6 +45,7 @@ public class Project_FrameData extends JFrame
 		int x = (dimension.width - width) / 2;
 		int y = (dimension.height - height) / 2;
 		setLocation(x, y);
+		
 	}
 	
 	// Méthode qui jongle entre tous les écrans
@@ -47,16 +53,16 @@ public class Project_FrameData extends JFrame
 	{
 		if (screen_selected == 0)
 		{
-			screen0 = new SelectionScreen(this);
+			screen0.setBackgound();
 			screen1 = null;
-			//vider screen2 quand il sera crée
+			screen2 = null;
+			
 			setContentPane(screen0);
 		}
 		else if (screen_selected == 1)
 		{
-			screen0 = null;
-			screen1 = new FighterScreen(fighter_id);
-			//vider screen2 quand il sera crée
+			screen1 = new FighterScreen(this, fighter_id);
+			
 			setContentPane(screen1);
 		}
 		else
@@ -73,10 +79,5 @@ public class Project_FrameData extends JFrame
 	{
 		Project_FrameData main_window = new Project_FrameData();
 		main_window.setVisible(true);
-	}
-	
-	public void oktest ()
-	{
-		System.out.println("ok");
 	}
 }
