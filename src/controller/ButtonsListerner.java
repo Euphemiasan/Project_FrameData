@@ -2,8 +2,12 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Iterator;
 
+import model.Move;
 import model.Request;
+import model.Fighter;
 
 import view.ButtonMode;
 import view.Project_FrameData;
@@ -14,7 +18,7 @@ public class ButtonsListerner implements ActionListener
 {	
 	private ButtonMode mode;
 	private Project_FrameData mainJFrame;
-	//private Request r = new Request();
+	private Request r = new Request();
 	
 	public ButtonsListerner (Project_FrameData jframe, ButtonMode button_mode)
 	{
@@ -26,8 +30,7 @@ public class ButtonsListerner implements ActionListener
 	{
 		//r.showChar(ae.getActionCommand());
 		//r.showMove(ae.getActionCommand());
-		//Fighter current = r.returnFighter(ae.getActionCommand());
-		//System.out.println("--"+current.getFighter_id()+" "+current.getFighter_name()+"--");
+		
 		int screen_nb, fighter_id;
 		if (ae.getActionCommand().equals("back"))
 		{
@@ -38,6 +41,16 @@ public class ButtonsListerner implements ActionListener
 		{
 			screen_nb = mode.getMode();
 			fighter_id = Integer.parseInt(ae.getActionCommand());
+			Fighter current = r.returnFighter(ae.getActionCommand());
+			System.out.println("--"+current.getFighter_id()+" "+current.getFighter_name()+"--");
+			ArrayList<Move> test = r.returnMoveList(current.getFighter_id());
+			Iterator<Move> i = test.iterator();
+			while (i.hasNext())
+			{
+				System.out.println("Coup : "+i.next().getName());
+			}
+		//	current.addMoves(r.returnMoveList(current.getFighter_id()));
+		//	current.showAllMove();
 		}
 		
 		mainJFrame.setScreen(screen_nb, fighter_id);

@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Repr�sente un Combattant
@@ -31,7 +32,7 @@ public class Fighter
 		while(i.hasNext())
 			this.fighter_moves.put(i.next().getName(), i.next());
 	}
-
+	
 	public int getFighter_id() {
 		return fighter_id;
 	}
