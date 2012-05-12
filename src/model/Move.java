@@ -15,9 +15,11 @@ public class Move
 	private String name;
 	private char type;
 	private String input;
+	private boolean armor_break;
+	private boolean ex;
 	private String note;
 	
-	public Move(int id, int f_id, String n, char t, String inp, String no) 
+	public Move(int id, int f_id, String n,  String inp, char t, boolean ab, boolean e, String no) 
 	{
 		move_id = id;
 		fighter_id = f_id;
@@ -25,6 +27,8 @@ public class Move
 		type = t;
 		input = inp;
 		note = no;
+		armor_break = ab;
+		ex = e;
 	}
 	
 	public int getMove_id() {
@@ -44,6 +48,14 @@ public class Move
 	}
 	public String getNote() {
 		return note;
+	}
+	
+	public boolean isArmor_break() {
+		return armor_break;
+	}
+
+	public boolean isEx() {
+		return ex;
 	}
 	
 }
