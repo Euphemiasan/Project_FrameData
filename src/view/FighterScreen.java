@@ -32,13 +32,13 @@ public class FighterScreen extends JPanel
 		
 		setPreferredSize(new Dimension(1100, 700));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		setBackground(Color.BLACK);
+		setBackground(Color.GRAY);
 		
 		// LeftPanel
 		JPanel leftPanel = new JPanel();
 		leftPanel.setPreferredSize(new Dimension(300, 700));
 		leftPanel.setLayout(null);
-		leftPanel.setBackground(Color.GRAY);
+		leftPanel.setBackground(Color.BLACK);
 		add(leftPanel);
 
 		// Premier Bouton "MoveList"
@@ -99,7 +99,7 @@ public class FighterScreen extends JPanel
 		leftPanel.add(name);
 		
 
-		String background_url = "images/description_screen/characters/" + fighter_id + "/leftbackground.png";
+		String background_url = "images/description_screen/characters/leftbackground/" + fighter_id + ".jpg";
 		BackgroundPanel background = new BackgroundPanel(background_url);
 		background.setBounds(0, 50, 300, 650);
 		leftPanel.add(background);
