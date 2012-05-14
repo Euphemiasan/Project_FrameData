@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import controller.ButtonsListerner;
 
@@ -34,7 +35,9 @@ public class FighterScreen extends JPanel
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		setBackground(Color.GRAY);
 		
-		// LeftPanel
+		///////////////
+		// LeftPanel //
+		///////////////
 		JPanel leftPanel = new JPanel();
 		leftPanel.setPreferredSize(new Dimension(300, 700));
 		leftPanel.setLayout(null);
@@ -98,11 +101,53 @@ public class FighterScreen extends JPanel
 		name.setBounds(0, 500, 300, 150);
 		leftPanel.add(name);
 		
-
 		String background_url = "images/description_screen/characters/leftbackground/" + fighter_id + ".jpg";
 		BackgroundPanel background = new BackgroundPanel(background_url);
 		background.setBounds(0, 50, 300, 650);
 		leftPanel.add(background);
 		
+		///////////////////
+		// Fin LeftPanel //
+		///////////////////
+
+		////////////////
+		// RightPanel //
+		////////////////
+		JScrollPane rightPanel = new JScrollPane();
+		////////////////////
+		// Fin RightPanel //
+		////////////////////
+		
+		
 	}
+	
+	/*
+	// Méthode qui jongle entre tous les onglets
+	public void setScrollContent (int screen_selected, int fighter_id)
+	{
+		if (screen_selected == 0)
+		{
+			screen0.setBackgound();
+			screen1 = null;
+			screen2 = null;
+			
+			setContentPane(screen0);
+		}
+		else if (screen_selected == 1)
+		{
+			screen1 = new FighterScreen(this, fighter_id);
+			
+			setContentPane(screen1);
+		}
+		else
+		{
+			// A remplir quand screen2 sera crée
+			System.out.println("Input mode non disponible pour le moment");
+		}
+
+		// La méthode pack permet de fixer une taille a la JFrame en conservant PreferredSize de son JPanel
+		pack();
+	}
+	
+	*/
 }
