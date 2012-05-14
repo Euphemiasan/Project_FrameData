@@ -32,6 +32,7 @@ public class ButtonsListerner implements ActionListener
 		//r.showMove(ae.getActionCommand());
 		
 		int screen_nb, fighter_id;
+		
 		if (ae.getActionCommand().equals("back"))
 		{
 			screen_nb = 0;
@@ -41,13 +42,16 @@ public class ButtonsListerner implements ActionListener
 		{
 			screen_nb = mode.getMode();
 			fighter_id = Integer.parseInt(ae.getActionCommand());
+			
 			Fighter current = r.returnFighter(ae.getActionCommand());
 			System.out.println("--"+current.getFighter_id()+" "+current.getFighter_name()+"--");
 			ArrayList<Move> test = r.returnMoveList(current.getFighter_id());
 			Iterator<Move> i = test.iterator();
+			Move current_move;
 			while (i.hasNext())
 			{
-				System.out.println("Coup : "+i.next().getName());
+				current_move = i.next();
+				System.out.println(current_move.getName() + " : " + current_move.getInput());
 			}
 		//	current.addMoves(r.returnMoveList(current.getFighter_id()));
 		//	current.showAllMove();
