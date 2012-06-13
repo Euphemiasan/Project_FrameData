@@ -1,8 +1,8 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Repr�sente un Combattant
@@ -17,31 +17,43 @@ public class Fighter
 	//
 	private int fighter_id;
 	private String fighter_name;
-	private HashMap<String, Move> fighter_moves; //cl� : nom du coup, valeur : frame data. //AL 4/5/12
+	private HashMap<Integer, Move> fighter_moves; //cl� : nom du coup, valeur : frame data. //AL 4/5/12
 	
 	public Fighter(int id, String name)
 	{
 		fighter_id = id;
 		fighter_name = name;
+		fighter_moves = new HashMap<Integer, Move>();	
 	}
 	
-	public void addMoves(ArrayList<Move> list)
+	public void addMoves(Move move)
 	{
-		Iterator<Move> i = list.iterator();
-		while(i.hasNext())
-			this.fighter_moves.put(i.next().getName(), i.next());
+		fighter_moves.put(new Integer(move.getMove_id()), move);
 	}
 	
-	public int getFighter_id() {
+	public int getFighter_id()
+	{
 		return fighter_id;
 	}
 
-	public String getFighter_name() {
+	public String getFighter_name()
+	{
 		return fighter_name;
 	}
 
-	public HashMap<String, Move> getFighter_moves() {
+	public HashMap<Integer, Move> getFighter_moves()
+	{
 		return fighter_moves;
 	}
 	
+	public void printMoves()
+	{
+		Iterator it = fighter_moves.entrySet().iterator();
+	    while (it.hasNext()) {
+	        Map.Entry pairs = (Map.Entry)it.next();
+	        Move m = (Move) pairs.getValue();
+	        System.out.println(m.getName() + " : " + m.getInput());
+	        it.remove(); // avoids a ConcurrentModificationException
+	    }
+	}
 }

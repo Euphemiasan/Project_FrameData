@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class ShowMoveList 
 {
-
+	
 	public ArrayList<String> moveAnalyzer(String move)
 	{
 		int index = 0;

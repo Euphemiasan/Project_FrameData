@@ -9,7 +9,6 @@ package model;
  */
 public class Move 
 {
-	
 	private int move_id;
 	private int fighter_id;	
 	private String name;

@@ -14,23 +14,33 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import model.Fighter;
+
 import controller.ButtonsListerner;
 
 public class FighterScreen extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 
-	private Project_FrameData main_window;
-	
+	private Fighter fighter;
 	private int fighter_id;
-
-	public FighterScreen (Project_FrameData windows, int id)
+	
+	private Project_FrameData main_window;
+	private JScrollPane right_panel;
+	
+	private DescriptionPanel description_panel;
+	private MovePanel move_list_panel;
+	
+	public FighterScreen (Project_FrameData windows, Fighter f)
 	{
 		super();
-
-		main_window = windows;
-		fighter_id = id;
 		
+		main_window = windows;
+		fighter = f;
+		fighter_id = fighter.getFighter_id();
+		
+		fighter.printMoves();
+
 		setPreferredSize(new Dimension(1100, 700));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		setBackground(Color.GRAY);
@@ -105,7 +115,6 @@ public class FighterScreen extends JPanel
 		BackgroundPanel background = new BackgroundPanel(background_url);
 		background.setBounds(0, 50, 300, 650);
 		leftPanel.add(background);
-		
 		///////////////////
 		// Fin LeftPanel //
 		///////////////////
@@ -113,7 +122,13 @@ public class FighterScreen extends JPanel
 		////////////////
 		// RightPanel //
 		////////////////
-		JScrollPane rightPanel = new JScrollPane();
+		right_panel = new JScrollPane(); 
+		right_panel.setPreferredSize(new Dimension(800, 700));
+		add(right_panel);
+		
+		description_panel = new DescriptionPanel();
+		move_list_panel = new MovePanel();
+		setScrollContent(0, 0);
 		////////////////////
 		// Fin RightPanel //
 		////////////////////
@@ -121,18 +136,21 @@ public class FighterScreen extends JPanel
 		
 	}
 	
-	/*
 	// Méthode qui jongle entre tous les onglets
-	public void setScrollContent (int screen_selected, int fighter_id)
+	public void setScrollContent (int pane_selected, int fighter_id)
 	{
-		if (screen_selected == 0)
+		if (pane_selected == 0)
 		{
-			screen0.setBackgound();
-			screen1 = null;
-			screen2 = null;
-			
-			setContentPane(screen0);
+			right_panel.getViewport().setView(description_panel);
+			right_panel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+			right_panel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		}
+		else if (pane_selected == 1)
+		{
+			
+		}
+		
+		/*
 		else if (screen_selected == 1)
 		{
 			screen1 = new FighterScreen(this, fighter_id);
@@ -146,8 +164,9 @@ public class FighterScreen extends JPanel
 		}
 
 		// La méthode pack permet de fixer une taille a la JFrame en conservant PreferredSize de son JPanel
+		
 		pack();
+		*/
 	}
 	
-	*/
 }

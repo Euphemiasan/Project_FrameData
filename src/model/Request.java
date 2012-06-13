@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class Request 
 {
@@ -13,49 +12,29 @@ public class Request
 	private Connection local;
 	private Statement localStat;
 	
-	public Request() 
+	public Request()
 	{
-		try 
-		{			
-			local = DriverManager.getConnection("jdbc:hsqldb:file:data/ssfivae", "sa", "");
-			localStat = local.createStatement();			
-		} 
-		catch(Exception e) 
-		{			
-			e.printStackTrace();			
-		}	
-	}
-	
-	public ArrayList<Move> returnMoveList(int id)
-	{
-		ArrayList<Move> result = new ArrayList<Move>();
-		StringBuilder request = new StringBuilder();
-		
 		try
 		{
-			request.append("Select move_id, fighter_id, move_name, move_input, move_type, move_armor_break, move_ex_possible, move_note from SpecialMoves where fighter_id='").append(id).append("'");
-			ResultSet res = localStat.executeQuery(request.toString());
-			while(res.next())
-			{
-				result.add((new Move(res.getInt(1),res.getInt(2),res.getString(3),res.getString(4),(res.getString(5)).charAt(0),res.getBoolean(6),res.getBoolean(7),res.getString(8))));
-			}
+			local = DriverManager.getConnection("jdbc:hsqldb:file:data/ssfivae", "sa", "");
+			localStat = local.createStatement();
 		}
-		catch (Exception e)
+		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		return result;
 	}
 	
-	public Fighter returnFighter(String n)
+	public Fighter returnFighter (int fighter_id)
 	{
 		StringBuilder request = new StringBuilder();
+		
 		int id = 0;
 		String name = null;
 		
 		try
 		{
-			request.append("Select fighter_id, fighter_name from Fighters where fighter_id = '").append(n).append("'");
+			request.append("Select fighter_id, fighter_name from Fighters where fighter_id = '").append(fighter_id).append("'");
 			ResultSet res = localStat.executeQuery(request.toString());
 			while(res.next())
 			{
@@ -68,8 +47,54 @@ public class Request
 			e.printStackTrace();
 		}
 		
-		return new Fighter(id,name);
+		Fighter fighter = new Fighter(id, name);
+		initializeMovesList(fighter);
+		
+		return fighter;
 	}
+	
+	public void initializeMovesList (Fighter f)
+	{
+		StringBuilder request = new StringBuilder();
+		
+		try
+		{
+			request.append("Select move_id, fighter_id, move_name, move_input, move_type, move_armor_break, move_ex_possible, move_note from SpecialMoves where fighter_id='").append(f.getFighter_id()).append("'");
+			ResultSet res = localStat.executeQuery(request.toString());
+			while(res.next())
+			{
+				f.addMoves(new Move(res.getInt(1), res.getInt(2), res.getString(3), res.getString(4), (res.getString(5)).charAt(0), res.getBoolean(6), res.getBoolean(7), res.getString(8)));
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	public ArrayList<Move> returnMoveList(int id)
+	{
+		ArrayList<Move> result = new ArrayList<Move>();
+		StringBuilder request = new StringBuilder();
+		
+		try
+		{
+			request.append("Select move_id, fighter_id, move_name, move_input, move_type, move_armor_break, move_ex_possible, move_note from SpecialMoves where fighter_id='").append(id).append("'");
+			ResultSet res = localStat.executeQuery(request.toString());
+			while(res.next())
+			{
+				
+				result.add((new Move(res.getInt(1),res.getInt(2),res.getString(3),res.getString(4),(res.getString(5)).charAt(0),res.getBoolean(6),res.getBoolean(7),res.getString(8))));
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return result;
+	}
+	*/
 	
 	public void showChar(String n)
 	{
